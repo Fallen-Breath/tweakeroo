@@ -29,10 +29,4 @@ public abstract class MixinExplosion
 
         return ParticleTypes.EXPLOSION_EMITTER;
     }
-
-    @ModifyVariable(method = "affectWorld", at = @At("HEAD"), argsOnly = true)
-    private boolean shouldSpawnparticles(boolean spawnParticles)
-    {
-        return spawnParticles && FeatureToggle.TWEAK_EXPLOSION_REDUCED_PARTICLES.getBooleanValue() == false;
-    }
 }
